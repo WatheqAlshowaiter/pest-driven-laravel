@@ -22,7 +22,7 @@ class CourseFactory extends Factory
             'tagline' => fake()->sentence(),
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
-            'image' => 'image.png',
+            'image_name' => 'image.png',
             'learnings' => ['Learn A', 'Learn B', 'Learn C'],
         ];
     }

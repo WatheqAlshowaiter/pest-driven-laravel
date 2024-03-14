@@ -5,17 +5,18 @@ use App\Models\Video;
 
 use function Pest\Laravel\get;
 
+it('does not find unreleased course details', function () {
+    // Arrange
+    $course = Course::factory()->create();
+
+    // Act & Assert
+    get(route('course-details', $course))
+        ->assertNotFound();
+});
+
 it('shows course details', function () {
     // Arrange
-    $course = Course::factory()->create([
-        'tagline' => 'Course tagline',
-        'image' => 'image.png',
-        'learnings' => [
-            'Learn laravel routes',
-            'Learn laravel views',
-            'Learn laravel commands',
-        ],
-    ]);
+    $course = Course::factory()->released()->create();
 
     // Act & Assert
     get(route('course-details', $course))
@@ -23,18 +24,18 @@ it('shows course details', function () {
         ->assertSeeText([
             $course->title,
             $course->description,
-            'Course tagline',
-            'Learn laravel routes',
-            'Learn laravel views',
-            'Learn laravel commands',
+            $course->tagline,
+            ...$course->learnings,
         ])
-        ->assertSee('image.png');
+        ->assertSee($course->image_name);
 });
 
 it('shows course video count', function () {
     // Arrange
-    $course = Course::factory()->create();
-    Video::factory()->count(3)->create(['course_id' => $course->id]);
+    $course = Course::factory()
+        ->released()
+        ->has(Video::factory()->count(3))
+        ->create();
 
     // Act & Assert
     get(route('course-details', $course))
