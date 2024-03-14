@@ -21,10 +21,13 @@ namespace App\Models{
  * @property string|null $released_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Video> $videos
+ * @property-read int|null $videos_count
  * @method static \Database\Factories\CourseFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Course newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Course newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Course query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Course released()
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereId($value)
@@ -157,5 +160,17 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
  */
 	class User extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Database\Factories\VideoFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|Video newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Video newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Video query()
+ */
+	class Video extends \Eloquent {}
 }
 

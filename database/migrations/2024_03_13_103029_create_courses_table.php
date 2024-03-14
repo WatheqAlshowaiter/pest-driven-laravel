@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('tagline');
             $table->string('title');
             $table->text('description');
-            $table->string('image');
+            $table->string('image_name');
             $table->json('learnings');
             $table->timestamp('released_at')->nullable();
             $table->timestamps();
