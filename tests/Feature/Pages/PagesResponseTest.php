@@ -17,7 +17,15 @@ it('gives back successful response for course details page', function () {
     get(route('pages.course-details', $course))->assertOk();
 });
 
-it('gives back successful response for dashboard page')
-    ->login()
-    ->get('dashboard')
-    ->assertOk();
+it('gives back successful response for dashboard page', function () {
+    // Act & Assert
+    login()
+        ->get(route('pages.dashboard'))
+        ->assertOk();
+});
+
+it('does not find JetStream registration page', function () {
+    // Act & Assert
+    get('register')
+        ->assertNotFound();
+});
