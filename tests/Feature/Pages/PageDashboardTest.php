@@ -3,15 +3,12 @@
 use App\Models\Course;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use function Pest\Laravel\get;
 
-uses(RefreshDatabase::class);
-
 it('cannot be accessed by a guest', function () {
     // Act & Assert
-    get(route('dashboard'))
+    get(route('pages.dashboard'))
         ->assertRedirect(route('login'));
 });
 
@@ -29,8 +26,8 @@ it('lists purchased courses', function () {
         ->create();
 
     // Act & Assert
-    $this->actingAs($user);
-    get(route('dashboard'))
+    login($user)
+        ->get(route('pages.dashboard'))
         ->assertOk()
         ->assertSeeText([
             'Course A',
@@ -40,12 +37,11 @@ it('lists purchased courses', function () {
 
 it('does not lists other courses', function () {
     // Arrange
-    $user = User::factory()->create();
     $course = Course::factory()->create();
 
     // Act & Assert
-    $this->actingAs($user);
-    get(route('dashboard'))
+    login()
+        ->get(route('pages.dashboard'))
         ->assertOk()
         ->assertDontSeeText($course->title);
 });
@@ -60,8 +56,8 @@ it('shows latest purchased course first', function () {
     $user->courses()->attach($latestPurchasedCourse, ['created_at' => Carbon::now()]);
 
     // Act & Assert
-    $this->actingAs($user);
-    get(route('dashboard'))
+    login($user)
+        ->get(route('pages.dashboard'))
         ->assertOk()
         ->assertSeeInOrder([
             $latestPurchasedCourse->title,
@@ -77,7 +73,7 @@ it('includes links to product videos', function () {
 
     // Act & Assert
     login($user)
-        ->get(route('dashboard'))
+        ->get(route('pages.dashboard'))
         ->assertOk()
         ->assertSeeText('Watch Videos')
         ->assertSee(route('page.course-videos', Course::first()));

@@ -6,7 +6,7 @@ use Laravel\Jetstream\Http\Livewire\UpdatePasswordForm;
 use Livewire\Livewire;
 
 test('password can be updated', function () {
-    $this->actingAs($user = User::factory()->create());
+    login($user = User::factory()->create());
 
     Livewire::test(UpdatePasswordForm::class)
         ->set('state', [
@@ -20,7 +20,7 @@ test('password can be updated', function () {
 });
 
 test('current password must be correct', function () {
-    $this->actingAs($user = User::factory()->create());
+    login($user = User::factory()->create());
 
     Livewire::test(UpdatePasswordForm::class)
         ->set('state', [
@@ -35,7 +35,7 @@ test('current password must be correct', function () {
 });
 
 test('new passwords must match', function () {
-    $this->actingAs($user = User::factory()->create());
+    login($user = User::factory()->create());
 
     Livewire::test(UpdatePasswordForm::class)
         ->set('state', [

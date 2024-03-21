@@ -5,7 +5,7 @@ use Laravel\Jetstream\Http\Livewire\UpdateProfileInformationForm;
 use Livewire\Livewire;
 
 test('current profile information is available', function () {
-    $this->actingAs($user = User::factory()->create());
+    login($user = User::factory()->create());
 
     $component = Livewire::test(UpdateProfileInformationForm::class);
 
@@ -14,7 +14,7 @@ test('current profile information is available', function () {
 });
 
 test('profile information can be updated', function () {
-    $this->actingAs($user = User::factory()->create());
+    login($user = User::factory()->create());
 
     Livewire::test(UpdateProfileInformationForm::class)
         ->set('state', ['name' => 'Test Name', 'email' => 'test@example.com'])

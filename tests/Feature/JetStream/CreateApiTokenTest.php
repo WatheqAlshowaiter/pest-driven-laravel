@@ -7,9 +7,9 @@ use Livewire\Livewire;
 
 test('api tokens can be created', function () {
     if (Features::hasTeamFeatures()) {
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        login($user = User::factory()->withPersonalTeam()->create());
     } else {
-        $this->actingAs($user = User::factory()->create());
+        login($user = User::factory()->create());
     }
 
     Livewire::test(ApiTokenManager::class)
