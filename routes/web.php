@@ -17,5 +17,5 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', PageDashboardController::class)->name('pages.dashboard');
-    Route::get('videos/{course:slug}', PageVideosController::class)->name('page.course-videos');
+    Route::get('videos/{course:slug}/{video:slug?}', PageVideosController::class)->name('pages.course-videos');
 });
