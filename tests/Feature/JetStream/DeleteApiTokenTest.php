@@ -8,9 +8,9 @@ use Livewire\Livewire;
 
 test('api tokens can be deleted', function () {
     if (Features::hasTeamFeatures()) {
-        $this->actingAs($user = User::factory()->withPersonalTeam()->create());
+        login($user = User::factory()->withPersonalTeam()->create());
     } else {
-        $this->actingAs($user = User::factory()->create());
+        login($user = User::factory()->create());
     }
 
     $token = $user->tokens()->create([
