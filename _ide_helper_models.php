@@ -16,8 +16,12 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property string $slug
+ * @property string $tagline
  * @property string $title
  * @property string $description
+ * @property string $image_name
+ * @property array $learnings
  * @property string|null $released_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -31,7 +35,11 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereImageName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereLearnings($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereReleasedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Course whereTagline($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Course whereUpdatedAt($value)
  */
@@ -59,6 +67,27 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Membership whereUserId($value)
  */
 	class Membership extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property int $course_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|PurchasedCourse newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|PurchasedCourse newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|PurchasedCourse query()
+ * @method static \Illuminate\Database\Eloquent\Builder|PurchasedCourse whereCourseId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PurchasedCourse whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PurchasedCourse whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PurchasedCourse whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PurchasedCourse whereUserId($value)
+ */
+	class PurchasedCourse extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -131,14 +160,11 @@ namespace App\Models{
  * @property string|null $two_factor_secret
  * @property string|null $two_factor_recovery_codes
  * @property string|null $two_factor_confirmed_at
- * @property-read \App\Models\Team|null $currentTeam
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Course> $courses
+ * @property-read int|null $courses_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Team> $ownedTeams
- * @property-read int|null $owned_teams_count
  * @property-read string $profile_photo_url
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Team> $teams
- * @property-read int|null $teams_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
  * @method static \Database\Factories\UserFactory factory($count = null, $state = [])
@@ -166,10 +192,18 @@ namespace App\Models{
 /**
  * 
  *
+ * @property int $id
+ * @property int $course_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Database\Factories\VideoFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Video newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Video newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Video query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Video whereCourseId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Video whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Video whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Video whereUpdatedAt($value)
  */
 	class Video extends \Eloquent {}
 }
