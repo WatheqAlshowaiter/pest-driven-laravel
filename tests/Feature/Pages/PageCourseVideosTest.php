@@ -17,7 +17,9 @@ it('cannot be accessed by a guest', function () {
 
 it('includes video player', function () {
     // Arrange
-    $course = Course::factory()->create();
+    $course = Course::factory()
+        ->has(Video::factory())
+        ->create();
 
     // Act & Assert
     login()
