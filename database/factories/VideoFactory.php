@@ -19,6 +19,9 @@ class VideoFactory extends Factory
         return [
             'slug' => fake()->slug(),
             'title' => fake()->sentence(),
+            'description' => fake()->paragraph(),
+            'duration' => fake()->numberBetween(1, 99),
+            'vimeo_id' => fake()->uuid(),
         ];
     }
 }

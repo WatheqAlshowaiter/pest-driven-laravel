@@ -17,6 +17,9 @@ return new class extends Migration
             $table->foreignIdFor(Course::class);
             $table->string('title');
             $table->string('slug');
+            $table->string('vimeo_id');
+            $table->string('description');
+            $table->integer('duration');
             $table->timestamps();
         });
     }
