@@ -69,6 +69,7 @@ class User extends Authenticatable
         return $this->belongsToMany(Course::class, 'purchased_courses')
             ->withTimestamps()
             ->orderByPivot('created_at', 'desc'); // or ->orderByDesc('pivot_created_at');
+
     }
 
     public function videos(): BelongsToMany
