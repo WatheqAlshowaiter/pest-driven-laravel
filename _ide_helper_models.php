@@ -167,6 +167,8 @@ namespace App\Models{
  * @property-read string $profile_photo_url
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Video> $videos
+ * @property-read int|null $videos_count
  * @method static \Database\Factories\UserFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
@@ -196,6 +198,7 @@ namespace App\Models{
  * @property int $course_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Course|null $course
  * @method static \Database\Factories\VideoFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Video newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Video newQuery()
@@ -206,5 +209,16 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Video whereUpdatedAt($value)
  */
 	class Video extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|WatchedVideo newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|WatchedVideo newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|WatchedVideo query()
+ */
+	class WatchedVideo extends \Eloquent {}
 }
 
