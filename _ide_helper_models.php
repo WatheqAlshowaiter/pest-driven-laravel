@@ -160,15 +160,15 @@ namespace App\Models{
  * @property string|null $two_factor_secret
  * @property string|null $two_factor_recovery_codes
  * @property string|null $two_factor_confirmed_at
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Course> $courses
- * @property-read int|null $courses_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
  * @property-read string $profile_photo_url
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Course> $purchasedCourses
+ * @property-read int|null $purchased_courses_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Video> $videos
- * @property-read int|null $videos_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Video> $watchedVideos
+ * @property-read int|null $watched_videos_count
  * @method static \Database\Factories\UserFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
