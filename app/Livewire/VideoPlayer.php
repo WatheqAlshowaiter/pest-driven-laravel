@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Video;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -30,5 +31,10 @@ class VideoPlayer extends Component
     public function markVideoAsNotCompleted(): void
     {
         Auth::user()->watchedVideos()->detach($this->video);
+    }
+
+    public function isCurrentVideo(Video $videoToCheck): bool
+    {
+        return $this->video->is($videoToCheck);
     }
 }
