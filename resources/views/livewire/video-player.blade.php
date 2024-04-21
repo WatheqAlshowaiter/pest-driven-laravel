@@ -6,13 +6,11 @@
     <h3>{{ $video?->title }} ({{ $video->getReadableDuration() }}min)</h3>
     <h3>{{ $video?->description }}</h3>
 
-    @if (auth()->check())
-        @if (auth()->user()->watchedVideos()->where('video_id', $video->id)->count())
+        @if ($video->alreadyWatchedByCurrentUser())
             <button wire:click="markVideoAsNotCompleted">Mark as not completed</button>
         @else
             <button wire:click="markVideoAsCompleted">Mark as completed</button>
         @endif
-    @endif
 
     <ul>
         @foreach ($courseVideos as $courseVideo)
