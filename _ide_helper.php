@@ -18641,6 +18641,243 @@ namespace Illuminate\Http {
             }
     }
 
+namespace Livewire\Features\SupportTesting {
+            /**
+     * 
+     *
+     * @mixin \Illuminate\Testing\TestResponse
+     */        class Testable {
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertPropertyWired()
+         * @param string $property
+         * @static 
+         */        public static function assertPropertyWired($property)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertPropertyWired($property);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertPropertyNotWired()
+         * @param string $property
+         * @static 
+         */        public static function assertPropertyNotWired($property)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertPropertyNotWired($property);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertPropertyEntangled()
+         * @param string $property
+         * @static 
+         */        public static function assertPropertyEntangled($property)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertPropertyEntangled($property);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertPropertyNotEntangled()
+         * @param string $property
+         * @static 
+         */        public static function assertPropertyNotEntangled($property)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertPropertyNotEntangled($property);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodWired()
+         * @param string $method
+         * @static 
+         */        public static function assertMethodWired($method)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodWired($method);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodNotWired()
+         * @param string $method
+         * @static 
+         */        public static function assertMethodNotWired($method)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodNotWired($method);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodWiredToAction()
+         * @param string $methodName
+         * @param string $action
+         * @static 
+         */        public static function assertMethodWiredToAction($methodName, $action)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodWiredToAction($methodName, $action);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodNotWiredToAction()
+         * @param string $methodName
+         * @param string $action
+         * @static 
+         */        public static function assertMethodNotWiredToAction($methodName, $action)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodNotWiredToAction($methodName, $action);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodWiredToForm()
+         * @param string $method
+         * @static 
+         */        public static function assertMethodWiredToForm($method)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodWiredToForm($method);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodNotWiredToForm()
+         * @param string $method
+         * @static 
+         */        public static function assertMethodNotWiredToForm($method)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodNotWiredToForm($method);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodWiredToEvent()
+         * @param string $method
+         * @param string $event
+         * @static 
+         */        public static function assertMethodWiredToEvent($method, $event)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodWiredToEvent($method, $event);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodNotWiredToEvent()
+         * @param string $method
+         * @param string $event
+         * @static 
+         */        public static function assertMethodNotWiredToEvent($method, $event)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodNotWiredToEvent($method, $event);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodWiredToEventWithoutModifiers()
+         * @param string $method
+         * @param string $event
+         * @static 
+         */        public static function assertMethodWiredToEventWithoutModifiers($method, $event)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodWiredToEventWithoutModifiers($method, $event);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertMethodNotWiredToEventWithoutModifiers()
+         * @param string $method
+         * @param string $event
+         * @static 
+         */        public static function assertMethodNotWiredToEventWithoutModifiers($method, $event)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertMethodNotWiredToEventWithoutModifiers($method, $event);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertContainsLivewireComponent()
+         * @param string $component
+         * @static 
+         */        public static function assertContainsLivewireComponent($component)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertContainsLivewireComponent($component);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertDoesNotContainLivewireComponent()
+         * @param string $component
+         * @static 
+         */        public static function assertDoesNotContainLivewireComponent($component)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertDoesNotContainLivewireComponent($component);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertContainsBladeComponent()
+         * @param string $componentNeedleClass
+         * @static 
+         */        public static function assertContainsBladeComponent($componentNeedleClass)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertContainsBladeComponent($componentNeedleClass);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertDoesNotContainBladeComponent()
+         * @param string $componentNeedleClass
+         * @static 
+         */        public static function assertDoesNotContainBladeComponent($componentNeedleClass)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertDoesNotContainBladeComponent($componentNeedleClass);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertSeeBefore()
+         * @param mixed $valueBefore
+         * @param mixed $valueAfter
+         * @static 
+         */        public static function assertSeeBefore($valueBefore, $valueAfter)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertSeeBefore($valueBefore, $valueAfter);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertDoNotSeeBefore()
+         * @param mixed $valueBefore
+         * @param mixed $valueAfter
+         * @static 
+         */        public static function assertDoNotSeeBefore($valueBefore, $valueAfter)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertDoNotSeeBefore($valueBefore, $valueAfter);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertFileDownloadedContains()
+         * @param mixed $content
+         * @static 
+         */        public static function assertFileDownloadedContains($content)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertFileDownloadedContains($content);
+        }
+                    /**
+         * 
+         *
+         * @see \Christophrumpel\MissingLivewireAssertions\CustomLivewireAssertionsMixin::assertFileDownloadedNotContains()
+         * @param mixed $content
+         * @static 
+         */        public static function assertFileDownloadedNotContains($content)
+        {
+                        return \Livewire\Features\SupportTesting\Testable::assertFileDownloadedNotContains($content);
+        }
+            }
+    }
+
 namespace Illuminate\Routing {
             /**
      * 
